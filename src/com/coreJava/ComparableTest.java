@@ -1,23 +1,29 @@
 package com.coreJava;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ComparableTest{
+public class ComparableTest implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1816862211535414436L;
+
 	public static void main(String[] args) {
 		
 
-		class Employee implements Comparable<Object>{
+		class Employee implements Comparable<Employee>{
 			
 			private String empName;
 			private int empId;
 
 			@Override
-			public int compareTo(Object obj) {
+			public int compareTo(Employee obj) {
 				
-				int result = this.empName.compareToIgnoreCase(((Employee)obj).empName);
+				int result = this.empName.compareToIgnoreCase(obj.empName);
 				if(result == 0)
-					result = this.empId - (((Employee)obj).empId);
+					result = this.empId - (obj.empId);
 				return result;
 			}
 

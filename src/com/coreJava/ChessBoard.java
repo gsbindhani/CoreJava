@@ -1,24 +1,16 @@
 package com.coreJava;
 
+import java.util.Arrays;
+
 public class ChessBoard {
 	public static void main(String[] args) {
 		String[][] arr = new String[10][10];
 		
-		
-		fillArrayWithWhiteColor(arr);
+		Arrays.fill(arr,"White");
 		prepareChessBoard(arr);	
 		printrArray("Chess Board", arr);
 	}
 
-	private static void fillArrayWithWhiteColor(String[][] arr){
-		String color = "White";
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
-					arr[i][j] = color;
-			}
-		}
-		
-	}
 	private static void prepareChessBoard(String[][] arr){
 		String deafultColor = "White";
 		for (int i = 0; i < arr.length; i++) {

@@ -1,5 +1,7 @@
 package com.coreJava;
 
+import com.coreJava.utils.ArrayUtils;
+
 public class ArrayMultiplication {
 	//First array of Row length must be equal to second array of Column length
 	/*
@@ -16,23 +18,14 @@ public class ArrayMultiplication {
 		
 		int[][] finalArr = new int[firstArr.length][secondArr[0].length];
 		
-		printrArray("First", firstArr);
-		printrArray("Second", secondArr);
+		ArrayUtils.print2dArray("First", firstArr,false);
+		ArrayUtils.print2dArray("Second", secondArr,false);
 		multiplyArray(firstArr, secondArr, finalArr);
-		printrArray("Final", finalArr);
+		ArrayUtils.print2dArray("Final", finalArr,false);
 		
 	}
 	
-	private static void printrArray(String arrayName ,int[][] arr){
-		System.out.println(arrayName+" Array:");
-		for (int row = 0; row < arr.length; row++) {
-			for (int  column= 0; column < arr[row].length; column++) {
-				System.out.print(arr[row][column]+"  ");
-			}
-			System.out.println();
-		}
-		System.out.println();
-	}
+	
 	
 	private static void multiplyArray(int[][] firstArr, int[][] secondArr, int[][] finalArr){
 		for (int r1= 0; r1 < firstArr.length; r1++) {
